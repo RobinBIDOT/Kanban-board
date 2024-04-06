@@ -124,7 +124,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <!-- Colonne To Do -->
         <div class="col-md-3">
@@ -133,6 +133,70 @@
               <h4>To Do</h4>
             </div>
             <ul class="list-group list-group-flush task-list" id="to-do">
+              <li class="list-group-item task">
+                <h5 class="mb-2">Optimiser la vitesse de chargement</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Le site se charge en moins de 3
+                  secondes
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Améliorer l'expérience utilisateur
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La vitesse de chargement est vérifiée
+                  avec PageSpeed Insights
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Tech Team</span>
+                </div>
+              </li>
+              <li class="list-group-item task">
+                <h5 class="mb-2">Mise en place de tests automatisés</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Les tests unitaires soient
+                  automatisés
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Garantir la fiabilité du code
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> Les tests automatisés couvrent au moins
+                  80% du code
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">QA Team</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Colonne Done -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-success">
+              <h4>Done</h4>
+            </div>
+            <ul class="list-group list-group-flush task-list" id="done">
               <li class="list-group-item task">
                 <h5 class="mb-2">Créer page de connexion</h5>
                 <p class="mb-1"><strong>En tant que:</strong> Utilisateur</p>
@@ -160,71 +224,6 @@
                 <div class="badge-container">
                   <span class="badge badge-info mr-1">John Doe</span>
                   <span class="badge badge-info mr-1">Jane Smith</span>
-                </div>
-              </li>
-              <li class="list-group-item task">
-                <h5 class="mb-2">Ajouter fonctionnalité de messagerie</h5>
-                <p class="mb-1"><strong>En tant que:</strong> Administrateur</p>
-                <p class="mb-1">
-                  <strong>Je veux que:</strong> Pouvoir envoyer des messages à
-                  tous les utilisateurs
-                </p>
-                <p class="mb-1">
-                  <strong>Afin de:</strong> Communiquer des informations
-                  importantes
-                </p>
-                <p class="mb-1">
-                  <strong>Valeur:</strong>
-                  <span class="badge badge-success">Élevée</span>
-                </p>
-                <p class="mb-1">
-                  <strong>Difficulté:</strong>
-                  <span class="badge badge-danger">Élevée</span>
-                </p>
-                <p class="mb-1">
-                  <strong>DoD:</strong> La fonctionnalité de messagerie permet
-                  l'envoi de messages individuels et en masse
-                </p>
-                <small class="d-block mb-2">Créé le: 2024-04-06</small>
-                <div class="badge-container">
-                  <span class="badge badge-info mr-1">Admin</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Colonne Doing -->
-        <div class="col-md-3">
-          <div class="card">
-            <div class="card-header bg-info">
-              <h4>Doing</h4>
-            </div>
-            <ul class="list-group list-group-flush task-list" id="doing">
-              <li class="list-group-item task">
-                <h5 class="mb-2">Mise en place de tests automatisés</h5>
-                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
-                <p class="mb-1">
-                  <strong>Je veux que:</strong> Les tests unitaires soient
-                  automatisés
-                </p>
-                <p class="mb-1">
-                  <strong>Afin de:</strong> Garantir la fiabilité du code
-                </p>
-                <p class="mb-1">
-                  <strong>Valeur:</strong>
-                  <span class="badge badge-success">Élevée</span>
-                </p>
-                <p class="mb-1">
-                  <strong>Difficulté:</strong>
-                  <span class="badge badge-warning">Moyenne</span>
-                </p>
-                <p class="mb-1">
-                  <strong>DoD:</strong> Les tests automatisés couvrent au moins
-                  80% du code
-                </p>
-                <small class="d-block mb-2">Créé le: 2024-04-06</small>
-                <div class="badge-container">
-                  <span class="badge badge-info mr-1">QA Team</span>
                 </div>
               </li>
               <li class="list-group-item task">
@@ -258,40 +257,13 @@
             </ul>
           </div>
         </div>
-        <!-- Colonne Done -->
+        <!-- Colonne Doing -->
         <div class="col-md-3">
           <div class="card">
-            <div class="card-header bg-success">
-              <h4>Done</h4>
+            <div class="card-header bg-info">
+              <h4>Doing</h4>
             </div>
-            <ul class="list-group list-group-flush task-list" id="done">
-              <li class="list-group-item task">
-                <h5 class="mb-2">Optimiser la vitesse de chargement</h5>
-                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
-                <p class="mb-1">
-                  <strong>Je veux que:</strong> Le site se charge en moins de 3
-                  secondes
-                </p>
-                <p class="mb-1">
-                  <strong>Afin de:</strong> Améliorer l'expérience utilisateur
-                </p>
-                <p class="mb-1">
-                  <strong>Valeur:</strong>
-                  <span class="badge badge-success">Élevée</span>
-                </p>
-                <p class="mb-1">
-                  <strong>Difficulté:</strong>
-                  <span class="badge badge-warning">Moyenne</span>
-                </p>
-                <p class="mb-1">
-                  <strong>DoD:</strong> La vitesse de chargement est vérifiée
-                  avec PageSpeed Insights
-                </p>
-                <small class="d-block mb-2">Créé le: 2024-04-06</small>
-                <div class="badge-container">
-                  <span class="badge badge-info mr-1">Tech Team</span>
-                </div>
-              </li>
+            <ul class="list-group list-group-flush task-list" id="doing">
               <li class="list-group-item task">
                 <h5 class="mb-2">Implémenter la pagination</h5>
                 <p class="mb-1"><strong>En tant que:</strong> Utilisateur</p>
@@ -319,6 +291,35 @@
                 <div class="badge-container">
                   <span class="badge badge-info mr-1">UI/UX Team</span>
                   <span class="badge badge-info mr-1">Dev Team</span>
+                </div>
+              </li>
+
+              <li class="list-group-item task">
+                <h5 class="mb-2">Ajouter fonctionnalité de messagerie</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Administrateur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Pouvoir envoyer des messages à
+                  tous les utilisateurs
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Communiquer des informations
+                  importantes
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-danger">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La fonctionnalité de messagerie permet
+                  l'envoi de messages individuels et en masse
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Admin</span>
                 </div>
               </li>
             </ul>

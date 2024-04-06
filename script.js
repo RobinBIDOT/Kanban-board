@@ -106,4 +106,3 @@ document.getElementById("toggleForm").addEventListener("click", function () {
   var form = document.querySelector(".add-task-form");
   form.style.display = form.style.display === "none" ? "block" : "none";
 });
-

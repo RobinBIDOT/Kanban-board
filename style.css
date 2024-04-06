@@ -11,11 +11,14 @@
 body {
   min-width: 420px;
   font-family: "Roboto Slab", serif;
+  font-size: 14px;
 }
 
 h1,
-h4 {
+h4,
+h5 {
   font-family: "Arimo", sans-serif;
+  font-size: 24px;
 }
 
 .card,
