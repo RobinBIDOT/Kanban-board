@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo:400,700|Roboto+Slab:400,700");
+
+:root {
+  font-size: calc(0.5vw + 1vh);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 420px;
+  font-family: "Roboto Slab", serif;
+}
+
+h1,
+h4 {
+  font-family: "Arimo", sans-serif;
+}
+
+.card,
+.task {
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover,
+.task:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-3d,
+.footer-3d,
+.add-task-3d {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.list-group {
+  min-height: 70px;
+}
+
+.button.btn {
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  border-radius: 0.2rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+/* Styles pour les tâches */
+.task-list .task {
+  list-style-type: none;
+  background: #fff;
+  border: 0.15rem solid #000013;
+  border-radius: 0.2rem;
+  cursor: move;
+}
+
+.add-task-form {
+  display: none;
+  position: absolute;
+}
+
+.add-task-trigger:hover .add-task-form {
+  display: block;
+}
+
+/* Styles Dragula */
+.gu-mirror {
+  position: fixed !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+}

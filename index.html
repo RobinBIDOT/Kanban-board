@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="bg-primary text-white text-center py-3 header-3d">
+      <h1>Kanban Board</h1>
+    </header>
+    <!-- Bouton pour déclencher la modale -->
+    <div class="d-flex justify-content-center mb-3 mt-3">
+      <button
+        class="btn btn-success"
+        data-toggle="modal"
+        data-target="#taskModal"
+      >
+        Ajouter une tâche
+      </button>
+    </div>
+    <!-- Modale pour le formulaire d'ajout de tâche -->
+    <div
+      class="modal fade"
+      id="taskModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="taskModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="taskModalLabel">
+              Ajouter une nouvelle tâche
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Formulaire d'ajout de tâche -->
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="taskTitle"
+              placeholder="Titre de la tâche..."
+            />
+            <textarea
+              class="form-control mb-2"
+              id="taskRole"
+              placeholder="En tant que..."
+              rows="2"
+            ></textarea>
+            <textarea
+              class="form-control mb-2"
+              id="taskObjective"
+              placeholder="Je veux que..."
+              rows="2"
+            ></textarea>
+            <textarea
+              class="form-control mb-2"
+              id="taskPurpose"
+              placeholder="Afin de..."
+              rows="2"
+            ></textarea>
+            <label for="taskValue" class="form-label">Valeur</label>
+            <select class="form-control mb-2" id="taskValue">
+              <option>Très élevée</option>
+              <option>Élevée</option>
+              <option>Moyenne</option>
+              <option>Basse</option>
+              <option>Très basse</option>
+            </select>
+            <label for="taskDifficulty" class="form-label">Difficulté</label>
+            <select class="form-control mb-2" id="taskDifficulty">
+              <option>Très élevée</option>
+              <option>Élevée</option>
+              <option>Moyenne</option>
+              <option>Basse</option>
+              <option>Très basse</option>
+            </select>
+            <input
+              type="text"
+              class="form-control mb-2"
+              id="taskDoD"
+              placeholder="DoD..."
+            />
+            <select class="form-control mb-2" id="taskAssignee" multiple>
+              <option value="Personne1">Admin</option>
+              <option value="Personne2">Dev Team</option>
+              <option value="Personne3">Documentation Team</option>
+              <option value="Personne4">Finance Team</option>
+              <option value="Personne5">Jane Smith</option>
+              <option value="Personne6">John Doe</option>
+              <option value="Personne7">QA Team</option>
+              <option value="Personne8">Robin BIDOT</option>
+              <option value="Personne9">Tech Team</option>
+              <option value="Personne10">UI/UX Team</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Fermer
+            </button>
+            <button type="button" class="btn btn-success" onclick="addTask()">
+              Confirmer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- Colonne To Do -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-warning">
+              <h4>To Do</h4>
+            </div>
+            <ul class="list-group list-group-flush task-list" id="to-do">
+              <li class="list-group-item task">
+                <h5 class="mb-2">Créer page de connexion</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Utilisateur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Pouvoir me connecter avec mon
+                  compte
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Accéder à mes informations
+                  personnelles
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La page de connexion affiche un
+                  formulaire et vérifie les identifiants
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">John Doe</span>
+                  <span class="badge badge-info mr-1">Jane Smith</span>
+                </div>
+              </li>
+              <li class="list-group-item task">
+                <h5 class="mb-2">Ajouter fonctionnalité de messagerie</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Administrateur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Pouvoir envoyer des messages à
+                  tous les utilisateurs
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Communiquer des informations
+                  importantes
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-danger">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La fonctionnalité de messagerie permet
+                  l'envoi de messages individuels et en masse
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Admin</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Colonne Doing -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-info">
+              <h4>Doing</h4>
+            </div>
+            <ul class="list-group list-group-flush task-list" id="doing">
+              <li class="list-group-item task">
+                <h5 class="mb-2">Mise en place de tests automatisés</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Les tests unitaires soient
+                  automatisés
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Garantir la fiabilité du code
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> Les tests automatisés couvrent au moins
+                  80% du code
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">QA Team</span>
+                </div>
+              </li>
+              <li class="list-group-item task">
+                <h5 class="mb-2">Intégration de système de paiement</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Administrateur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Les utilisateurs puissent
+                  effectuer des paiements en ligne
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Monétiser le service
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-danger">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> Le système de paiement est intégré et
+                  fonctionnel avec les principaux modes de paiement
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Finance Team</span>
+                  <span class="badge badge-info mr-1">Dev Team</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Colonne Done -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-success">
+              <h4>Done</h4>
+            </div>
+            <ul class="list-group list-group-flush task-list" id="done">
+              <li class="list-group-item task">
+                <h5 class="mb-2">Optimiser la vitesse de chargement</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Développeur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Le site se charge en moins de 3
+                  secondes
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Améliorer l'expérience utilisateur
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La vitesse de chargement est vérifiée
+                  avec PageSpeed Insights
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Tech Team</span>
+                </div>
+              </li>
+              <li class="list-group-item task">
+                <h5 class="mb-2">Implémenter la pagination</h5>
+                <p class="mb-1"><strong>En tant que:</strong> Utilisateur</p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> Les résultats de recherche
+                  soient paginés
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Faciliter la navigation dans les
+                  résultats
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-success">Élevée</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-warning">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> La pagination fonctionne correctement
+                  avec les résultats de recherche
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-06</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">UI/UX Team</span>
+                  <span class="badge badge-info mr-1">Dev Team</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Colonne Trash -->
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header bg-danger">
+              <h4>Trash</h4>
+            </div>
+            <ul class="list-group list-group-flush task-list" id="trash">
+              <li class="list-group-item task">
+                <h5 class="mb-2">Réviser la documentation</h5>
+                <p class="mb-1">
+                  <strong>En tant que:</strong> Rédacteur technique
+                </p>
+                <p class="mb-1">
+                  <strong>Je veux que:</strong> La documentation soit vérifiée
+                  et mise à jour
+                </p>
+                <p class="mb-1">
+                  <strong>Afin de:</strong> Assurer la précision et la clarté
+                  des informations
+                </p>
+                <p class="mb-1">
+                  <strong>Valeur:</strong>
+                  <span class="badge badge-info">Moyenne</span>
+                </p>
+                <p class="mb-1">
+                  <strong>Difficulté:</strong>
+                  <span class="badge badge-primary">Basse</span>
+                </p>
+                <p class="mb-1">
+                  <strong>DoD:</strong> Toutes les sections de la documentation
+                  ont été révisées et les corrections apportées
+                </p>
+                <small class="d-block mb-2">Créé le: 2024-04-08</small>
+                <div class="badge-container">
+                  <span class="badge badge-info mr-1">Documentation Team</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-danger" onclick="emptyTrash()">
+              Vider la Corbeille
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5 footer-3d">
+      <p>Robin Bidot - Étudiant développeur web/mobile fullstack.</p>
+      <p>
+        Je recherche activement un contrat d’apprentissage en développement web
+        / mobile full stack (rythme 2 s. entreprise 1 s. école) pour un bachelor
+        puis un MBA "Développeur fullstack"
+      </p>
+    </footer>
+    <!-- Inclusion des scripts JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
