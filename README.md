@@ -8,7 +8,7 @@ Le Kanban Board est une application web simplifiée permettant de gérer des tâ
 - **Glisser-déposer:** Déplacement facile des tâches entre les colonnes du tableau Kanban.
 - **Attribution des tâches:** Possibilité d'attribuer des tâches à des membres de l'équipe lors de la création.
 - **Priorisation:** Classement des tâches en fonction de leur valeur et de leur difficulté.
-- **Corbeille:** Suppression et restauration des tâches via la corbeille.
+- **Corbeille:** Suppression des tâches via la corbeille.
 
 ### Technologies Utilisées
 
